@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diniz Nutricionista</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./img/icon.ico" />
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+      <div class="loader-bg">
+        <div class="loader-particles"></div>
+      </div>
+      <div class="loader-content">
+        <div class="loader-logo-container">
+          <div class="loader-logo">
+            <span class="loader-d">D</span>
+            <span class="loader-nutri">Nutri</span>
+          </div>
+          <div class="loader-tagline">Transformando vidas</div>
+        </div>
+        <div class="loader-progress-container">
+          <div class="loader-progress-bar">
+            <div class="loader-progress-fill"></div>
+          </div>
+          <div class="loader-percentage">0%</div>
+        </div>
+        <div class="loader-features">
+          <div class="loader-feature active">
+            <i class="fas fa-leaf"></i>
+            <span>Nutrição personalizada</span>
+          </div>
+          <div class="loader-feature">
+            <i class="fas fa-heartbeat"></i>
+            <span>Saúde e bem-estar</span>
+          </div>
+          <div class="loader-feature">
+            <i class="fas fa-chart-line"></i>
+            <span>Resultados reais</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+      <a href="#" class="logo">Diniz<span>Nutri</span></a>
+      <ul class="nav-links">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#unidades">Unidades</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#areas">Áreas</a></li>
+        <li><a href="#resultados">Resultados</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-check-circle"></i>
+            Nutrição que se adapta à sua vida
+          </div>
+          <h1>Transforme seu corpo sem dietas impossíveis</h1>
+          <p class="hero-subtitle">
+            Emagreça, ganhe massa muscular e tenha uma alimentação que funciona
+            para a sua rotina.
+          </p>
+          <div class="hero-buttons">
+            <a
+              href="https://wa.me/5519998996659"
+              class="btn btn-primary"
+              target="_blank"
+            >
+              <i class="fas fa-calendar-check"></i>
+              Agendar consulta
+            </a>
+            <a href="#unidades" class="btn btn-secondary">
+              <i class="fas fa-map-marker-alt"></i>
+              Ver unidades de atendimento
+            </a>
+          </div>
+          <div class="hero-features">
+            <div class="hero-feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Atendimento Presencial</span>
+            </div>
+            <div class="hero-feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Plano alimentar personalizado</span>
+            </div>
+            <div class="hero-feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Nutrição clínica e esportiva</span>
+            </div>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-card">
+              <span class="stat-number" data-target="6">0</span>
+              <div class="stat-label">Unidades de atendimento</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" data-target="1000">0</span>
+              <div class="stat-label">+ Pacientes acompanhados</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number"><i class="fas fa-user-md"></i></span>
+              <div class="stat-label">Atendimento presencial</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number"><i class="fas fa-apple-alt"></i></span>
+              <div class="stat-label">Nutrição clínica e esportiva</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-image-wrapper">
+            <img src="./img/Diniz.jpeg" alt="Diniz Nutricionista" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section class="locations" id="unidades">
+      <div class="section-header">
+        <h2>Onde atender</h2>
+        <p>Escolha a unidade mais próxima de você e comece sua transformação</p>
+      </div>
+
+      <div class="locations-grid">
+        <div class="location-card">
+          <div class="location-header">
+            <div class="location-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <h3 class="location-title">Panobianco Centro</h3>
+          </div>
+          <div class="location-address">
+            <i class="fas fa-location-dot" style="margin-top: 5px"></i>
+            <span>R. Moraes Barros, 514 - Centro<br />Piracicaba - SP</span>
+          </div>
+          <div class="location-buttons">
+            <a
+              href="https://www.google.com/maps/place/Panobianco+Piracicaba+Centro/@-22.7244943,-47.6538975,17z/data=!3m1!4b1!4m6!3m5!1s0x94c631c68dab8b11:0xd2284db74cebceee!8m2!3d-22.7244993!4d-47.6513226!16s%2Fg%2F11tnv30l4s?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              class="btn-location btn-maps"
+            >
+              <i class="fas fa-map-marked-alt"></i>
+              Abrir no Maps
+            </a>
+            <a
+              href="https://wa.me/5519998996659"
+              target="_blank"
+              class="btn-location btn-schedule-location"
+            >
+              <i class="fas fa-calendar-check"></i>
+              Agendar nessa unidade
+            </a>
+          </div>
+        </div>
+
+        <div class="location-card">
+          <div class="location-header">
+            <div class="location-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <h3 class="location-title">Panobianco Dois Córregos</h3>
+          </div>
+          <div class="location-address">
+            <i class="fas fa-location-dot" style="margin-top: 5px"></i>
+            <span
+              >Av. Dois Córregos, 1881 - Dois Córregos<br />Piracicaba -
+              SP</span
+            >
+          </div>
+          <div class="location-buttons">
+            <a
+              href="https://www.google.com/maps/place/Panobianco+Unidade+Dois+C%C3%B3rregos/@-22.7418302,-47.6152453,17z/data=!3m1!4b1!4m6!3m5!1s0x94c6310058f94aff:0x3a7edaf3e0a52233!8m2!3d-22.7418352!4d-47.6126704!16s%2Fg%2F11vy9x8fgn?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              class="btn-location btn-maps"
+            >
+              <i class="fas fa-map-marked-alt"></i>
+              Abrir no Maps
+            </a>
+            <a
+              href="https://wa.me/5519998996659"
+              target="_blank"
+              class="btn-location btn-schedule-location"
+            >
+              <i class="fas fa-calendar-check"></i>
+              Agendar nessa unidade
+            </a>
+          </div>
+        </div>
+
+        <div class="location-card">
+          <div class="location-header">
+            <div class="location-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <h3 class="location-title">Panobianco Pauliceia</h3>
+          </div>
+          <div class="location-address">
+            <i class="fas fa-location-dot" style="margin-top: 5px"></i>
+            <span>R. Dona Idalina, 600 - Paulicéia<br />Piracicaba - SP</span>
+          </div>
+          <div class="location-buttons">
+            <a
+              href="https://www.google.com/maps/place/Academia+Panobianco+-+Unidade+Paulic%C3%A9ia/@-22.7456135,-47.6473668,17z/data=!3m1!4b1!4m6!3m5!1s0x94c631e25e78542d:0xfdfcb7fc4dcbf013!8m2!3d-22.7456185!4d-47.6447919!16s%2Fg%2F11rq4rw90g?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              class="btn-location btn-maps"
+            >
+              <i class="fas fa-map-marked-alt"></i>
+              Abrir no Maps
+            </a>
+            <a
+              href="https://wa.me/5519998996659"
+              target="_blank"
+              class="btn-location btn-schedule-location"
+            >
+              <i class="fas fa-calendar-check"></i>
+              Agendar nessa unidade
+            </a>
+          </div>
+        </div>
+
+        <div class="location-card">
+          <div class="location-header">
+            <div class="location-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <h3 class="location-title">Panobianco Cerquilho</h3>
+          </div>
+          <div class="location-address">
+            <i class="fas fa-location-dot" style="margin-top: 5px"></i>
+            <span>R. Santa Catarina, 40 - CECAP<br />Cerquilho - SP</span>
+          </div>
+          <div class="location-buttons">
+            <a
+              href="https://www.google.com/maps/place/Panobianco+Academia+-+Cerquilho/@-23.1623233,-47.7402684,17z/data=!3m1!4b1!4m6!3m5!1s0x94c60d000ea57051:0x12992a5b96aded81!8m2!3d-23.1623283!4d-47.7376935!16s%2Fg%2F11md3b08yy?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              class="btn-location btn-maps"
+            >
+              <i class="fas fa-map-marked-alt"></i>
+              Abrir no Maps
+            </a>
+            <a
+              href="https://wa.me/5519998996659"
+              target="_blank"
+              class="btn-location btn-schedule-location"
+            >
+              <i class="fas fa-calendar-check"></i>
+              Agendar nessa unidade
+            </a>
+          </div>
+        </div>
+
+        <div class="location-card">
+          <div class="location-header">
+            <div class="location-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <h3 class="location-title">Panobianco Campo Grande</h3>
+          </div>
+          <div class="location-address">
+            <i class="fas fa-location-dot" style="margin-top: 5px"></i>
+            <span
+              >R. Edgar Pereira de Souza, 247 - Parque Valença<br />Campinas -
+              SP</span
+            >
+          </div>
+          <div class="location-buttons">
+            <a
+              href="https://www.google.com/maps/place/R.+Edgar+Pereira+de+Souza,+247+-+Parque+Valen%C3%A7a,+Campinas+-+SP,+13058-520/@-22.9447532,-47.1908723,17z/data=!3m1!4b1!4m6!3m5!1s0x94c8b76f1c04b4cf:0x7ef515d43eff3e44!8m2!3d-22.9447582!4d-47.1882974!16s%2Fg%2F11f259bkrl?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              class="btn-location btn-maps"
+            >
+              <i class="fas fa-map-marked-alt"></i>
+              Abrir no Maps
+            </a>
+            <a
+              href="https://wa.me/5519998996659"
+              target="_blank"
+              class="btn-location btn-schedule-location"
+            >
+              <i class="fas fa-calendar-check"></i>
+              Agendar nessa unidade
+            </a>
+          </div>
+        </div>
+
+        <div class="location-card">
+          <div class="location-header">
+            <div class="location-icon">
+              <i class="fas fa-dumbbell"></i>
+            </div>
+            <h3 class="location-title">Shark Pro Piracicaba</h3>
+          </div>
+          <div class="location-address">
+            <i class="fas fa-location-dot" style="margin-top: 5px"></i>
+            <span>Av. São Paulo, 944 - Centro<br />Piracicaba - SP</span>
+          </div>
+          <div class="location-buttons">
+            <a
+              href="https://www.google.com/maps/place/Shark+Pro+Piracicaba/@-22.747126,-47.6530103,17z/data=!3m1!4b1!4m6!3m5!1s0x94c6317a7a67191b:0x4f8def982b3fb6c4!8m2!3d-22.747131!4d-47.6504354!16s%2Fg%2F11w811hqrd?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              class="btn-location btn-maps"
+            >
+              <i class="fas fa-map-marked-alt"></i>
+              Abrir no Maps
+            </a>
+            <a
+              href="https://wa.me/5519998996659"
+              target="_blank"
+              class="btn-location btn-schedule-location"
+            >
+              <i class="fas fa-calendar-check"></i>
+              Agendar nessa unidade
+            </a>
+          </div>
+        </div>
+
+        <!-- Unidades extras (ocultas inicialmente) -->
+        <div class="location-card hidden-location">
+          <div class="location-header">
+            <div class="location-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <h3 class="location-title">Panobianco Limeira</h3>
+          </div>
+          <div class="location-address">
+            <i class="fas fa-location-dot" style="margin-top: 5px"></i>
+            <span>R. Boa Morte, 1200 - Centro<br />Limeira - SP</span>
+          </div>
+          <div class="location-buttons">
+            <a
+              href="https://wa.me/5519998996659"
+              target="_blank"
+              class="btn-location btn-maps"
+            >
+              <i class="fas fa-map-marked-alt"></i>
+              Abrir no Maps
+            </a>
+            <a
+              href="https://wa.me/5519998996659"
+              target="_blank"
+              class="btn-location btn-schedule-location"
+            >
+              <i class="fas fa-calendar-check"></i>
+              Agendar nessa unidade
+            </a>
+          </div>
+        </div>
+
+        <div class="location-card hidden-location">
+          <div class="location-header">
+            <div class="location-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <h3 class="location-title">Panobianco Rio Claro</h3>
+          </div>
+          <div class="location-address">
+            <i class="fas fa-location-dot" style="margin-top: 5px"></i>
+            <span>Av. 1, 800 - Centro<br />Rio Claro - SP</span>
+          </div>
+          <div class="location-buttons">
+            <a
+              href="https://wa.me/5519998996659"
+              target="_blank"
+              class="btn-location btn-maps"
+            >
+              <i class="fas fa-map-marked-alt"></i>
+              Abrir no Maps
+            </a>
+            <a
+              href="https://wa.me/5519998996659"
+              target="_blank"
+              class="btn-location btn-schedule-location"
+            >
+              <i class="fas fa-calendar-check"></i>
+              Agendar nessa unidade
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="show-more-container">
+        <button class="btn-show-more" id="btnShowMore">
+          <i class="fas fa-chevron-down"></i>
+          Ver mais unidades
+        </button>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="sobre">
+      <div class="about-container">
+        <div class="about-image">
+          <img src="./img/Diniz.jpeg" alt="Diniz Nutricionista" />
+          <div class="about-badge">
+            <i class="fas fa-award"></i><br />
+            +10 anos de<br />experiência
+          </div>
+        </div>
+        <div class="about-content">
+          <h2>Quem é o Diniz</h2>
+          <p class="about-text">
+            Com mais de uma década dedicando-se à nutrição clínica e esportiva,
+            o Diniz desenvolveu uma metodologia única que combina ciência de
+            ponta com uma abordagem humanizada. Sua filosofia é simples:
+            alimentação saudável não precisa ser sinônimo de sofrimento.
+          </p>
+          <p class="about-text">
+            Formado pela USP com especializações em Nutrição Esportiva e
+            Metabolismo, já ajudou mais de 1.000 pacientes a transformarem seus
+            corpos e suas vidas através de uma reeducação alimentar sustentável
+            e prazerosa.
+          </p>
+          <div class="about-specializations">
+            <span class="spec-tag">Nutrição Clínica</span>
+            <span class="spec-tag">Nutrição Esportiva</span>
+            <span class="spec-tag">Emagrecimento</span>
+            <span class="spec-tag">Hipertrofia</span>
+            <span class="spec-tag">Saúde Metabólica</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Areas Section -->
+    <section class="areas" id="areas">
+      <div class="section-header">
+        <h2>Áreas de atuação</h2>
+        <p>Especialista em transformar vidas através da nutrição</p>
+      </div>
+      <div class="areas-grid">
+        <div class="area-card">
+          <div class="area-icon">🏋️</div>
+          <h3>Emagrecimento</h3>
+          <p>Perca peso de forma saudável e definitiva sem passar fome</p>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">💪</div>
+          <h3>Hipertrofia</h3>
+          <p>Ganho de massa muscular com estratégia nutricional precisa</p>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">⚡</div>
+          <h3>Performance esportiva</h3>
+          <p>Maximize seus resultados nos treinos e competições</p>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">🥗</div>
+          <h3>Reeducação alimentar</h3>
+          <p>Aprenda a comer bem para o resto da vida</p>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">❤️</div>
+          <h3>Saúde metabólica</h3>
+          <p>Controle e prevenção de doenças metabólicas</p>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">🌟</div>
+          <h3>Qualidade de vida</h3>
+          <p>Mais energia, disposição e bem-estar no dia a dia</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results" id="resultados">
+      <div class="section-header">
+        <h2>Resultados reais</h2>
+        <p>Transformações que inspiram e motivam</p>
+      </div>
+      <div class="results-carousel">
+        <div class="results-track" id="resultsTrack">
+          <div class="result-card">
+            <div class="result-images" style="position: relative">
+              <img src="./img/Antes_vini.we" alt="Antes" />
+              <img src="./img/Depois_vini.we" alt="Depois" />
+              <span class="result-label">Antes e Depois</span>
+            </div>
+            <div class="result-content">
+              <h3>Maria S. - 6 meses</h3>
+              <p>
+                Perda de 15kg com ganho de massa magra. Reeducação alimentar
+                completa.
+              </p>
+            </div>
+          </div>
+          <div class="result-card">
+            <div class="result-images" style="position: relative">
+              <img src="./img/Antes_vini.we" alt="Antes" />
+              <img src="./img/Depois_vini.we" alt="Depois" />
+              <span class="result-label">Antes e Depois</span>
+            </div>
+            <div class="result-content">
+              <h3>João P. - 4 meses</h3>
+              <p>Ganho de 8kg de massa muscular e definição abdominal.</p>
+            </div>
+          </div>
+          <div class="result-card">
+            <div class="result-images" style="position: relative">
+              <img src="./img/Antes_vini.we" alt="Antes" />
+              <img src="./img/Depois_vini.we" alt="Depois" />
+              <span class="result-label">Antes e Depois</span>
+            </div>
+            <div class="result-content">
+              <h3>Ana L. - 8 meses</h3>
+              <p>
+                Transformação completa: -20kg e melhora nos exames de sangue.
+              </p>
+            </div>
+          </div>
+          <div class="result-card">
+            <div class="result-images" style="position: relative">
+              <img src="./img/Antes_vini.we" alt="Antes" />
+              <img src="./img/Depois_vini.we" alt="Depois" />
+              <span class="result-label">Antes e Depois</span>
+            </div>
+            <div class="result-content">
+              <h3>Carlos M. - 5 meses</h3>
+              <p>Perda de 12kg e aumento de performance nos treinos.</p>
+            </div>
+          </div>
+          <div class="result-card">
+            <div class="result-images" style="position: relative">
+              <img src="./img/Antes_vini.we" alt="Antes" />
+              <img src="./img/Depois_vini.we" alt="Depois" />
+              <span class="result-label">Antes e Depois</span>
+            </div>
+            <div class="result-content">
+              <h3>Juliana R. - 7 meses</h3>
+              <p>Emagrecimento de 18kg com manutenção da massa muscular.</p>
+            </div>
+          </div>
+          <div class="result-card">
+            <div class="result-images" style="position: relative">
+              <img src="./img/Antes_vini.we" alt="Antes" />
+              <img src="./img/Depois_vini.we" alt="Depois" />
+              <span class="result-label">Antes e Depois</span>
+            </div>
+            <div class="result-content">
+              <h3>Pedro H. - 3 meses</h3>
+              <p>Ganho de 6kg de massa magra com definição muscular.</p>
+            </div>
+          </div>
+          <div class="result-card">
+            <div class="result-images" style="position: relative">
+              <img src="./img/Antes_vini.we" alt="Antes" />
+              <img src="./img/Depois_vini.we" alt="Depois" />
+              <span class="result-label">Antes e Depois</span>
+            </div>
+            <div class="result-content">
+              <h3>Fernanda C. - 9 meses</h3>
+              <p>Transformação total: -25kg e melhora na saúde metabólica.</p>
+            </div>
+          </div>
+          <div class="result-card">
+            <div class="result-images" style="position: relative">
+              <img src="./img/Antes_vini.we" alt="Antes" />
+              <img src="./img/Depois_vini.we" alt="Depois" />
+              <span class="result-label">Antes e Depois</span>
+            </div>
+            <div class="result-content">
+              <h3>Ricardo A. - 6 meses</h3>
+              <p>Perda de 14kg e ganho de resistência física.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="prevResult">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="carousel-btn" id="nextResult">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="how-it-works">
+      <div class="section-header">
+        <h2>Como funciona</h2>
+        <p>Quatro passos simples para transformar sua alimentação</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Agende</h3>
+          <p>Escolha a unidade mais próxima e marque sua consulta</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Avaliação física</h3>
+          <p>Análise completa da composição corporal e hábitos</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Plano personalizado</h3>
+          <p>Dieta adaptada à sua rotina e objetivos</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Acompanhamento</h3>
+          <p>Suporte contínuo para garantir seus resultados</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Differentials -->
+    <section class="differentials">
+      <div class="section-header">
+        <h2>Diferenciais</h2>
+        <p>O que torna nosso atendimento único</p>
+      </div>
+      <div class="diff-grid">
+        <div class="diff-card">
+          <div class="diff-icon">🚫</div>
+          <h3>Sem terrorismo nutricional</h3>
+          <p>Nada de proibições extremas ou dietas malucas</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-icon">📅</div>
+          <h3>Plano adaptado à rotina</h3>
+          <p>Dieta que se encaixa na sua vida, não o contrário</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-icon">🍕</div>
+          <h3>Alimentação flexível</h3>
+          <p>Coma o que gosta com moderação e estratégia</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-icon">🔬</div>
+          <h3>Estratégias baseadas em ciência</h3>
+          <p>Métodos comprovados e atualizados</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-icon">🤝</div>
+          <h3>Atendimento humanizado</h3>
+          <p>Você é único, seu plano também será</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="section-header">
+        <h2>Depoimentos</h2>
+        <p>O que nossos pacientes dizem</p>
+      </div>
+      <div class="testimonials-slider">
+        <div class="testimonials-track" id="testimonialsTrack">
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop"
+                alt="Paciente"
+                class="testimonial-image"
+              />
+              <p class="testimonial-text">
+                "Consegui emagrecer 15kg em 6 meses sem sofrer! O Diniz me
+                ensinou a comer de forma saudável sem abrir mão do que gosto.
+                Minha vida mudou completamente!"
+              </p>
+              <div class="testimonial-name">Maria Silva</div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop"
+                alt="Paciente"
+                class="testimonial-image"
+              />
+              <p class="testimonial-text">
+                "Ganhei 10kg de massa muscular em 5 meses. O plano alimentar é
+                perfeito e se adapta perfeitamente à minha rotina de treinos
+                pesados."
+              </p>
+              <div class="testimonial-name">João Pedro</div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop"
+                alt="Paciente"
+                class="testimonial-image"
+              />
+              <p class="testimonial-text">
+                "Finalmente encontrei um nutricionista que entende que cada
+                pessoa é única. Meu metabolismo melhorou muito e tenho muito
+                mais energia!"
+              </p>
+              <div class="testimonial-name">Ana Lima</div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop"
+                alt="Paciente"
+                class="testimonial-image"
+              />
+              <p class="testimonial-text">
+                "Perdi 20kg em 8 meses seguindo o plano do Diniz. Nunca me senti
+                tão bem e disposto. Recomendo para todos!"
+              </p>
+              <div class="testimonial-name">Carlos Mendes</div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop"
+                alt="Paciente"
+                class="testimonial-image"
+              />
+              <p class="testimonial-text">
+                "O atendimento é incrível! O Diniz realmente se importa com seus
+                pacientes e cria planos que funcionam na vida real."
+              </p>
+              <div class="testimonial-name">Juliana Rocha</div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop"
+                alt="Paciente"
+                class="testimonial-image"
+              />
+              <p class="testimonial-text">
+                "Melhor investimento que fiz na minha saúde! Resultados visíveis
+                já no primeiro mês."
+              </p>
+              <div class="testimonial-name">Pedro Henrique</div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop"
+                alt="Paciente"
+                class="testimonial-image"
+              />
+              <p class="testimonial-text">
+                "Finalmente consegui manter o peso que sempre quis! O segredo é
+                o acompanhamento constante do Diniz."
+              </p>
+              <div class="testimonial-name">Fernanda Costa</div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop"
+                alt="Paciente"
+                class="testimonial-image"
+              />
+              <p class="testimonial-text">
+                "Profissional excepcional! Transformou minha relação com a
+                comida e com meu corpo."
+              </p>
+              <div class="testimonial-name">Ricardo Alves</div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn" id="prevTestimonial">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="slider-dots" id="sliderDots"></div>
+          <button class="slider-btn" id="nextTestimonial">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <div class="section-header">
+        <h2>Perguntas frequentes</h2>
+        <p>Tire suas dúvidas</p>
+      </div>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Preciso treinar?</span>
+            <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            Não é obrigatório, mas recomendamos a prática de atividade física
+            para potencializar os resultados. O plano alimentar é adaptado tanto
+            para quem treina quanto para quem não treina.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Quanto tempo dura a consulta?</span>
+            <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            A primeira consulta dura aproximadamente 60 minutos, onde fazemos
+            uma avaliação completa. As consultas de acompanhamento duram cerca
+            de 30 minutos.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Recebo plano alimentar?</span>
+            <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            Sim! Você recebe um plano alimentar 100% personalizado, elaborado
+            especificamente para seus objetivos, rotina e preferências
+            alimentares.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Atende convênio?</span>
+            <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            Trabalhamos com alguns convênios médicos. Entre em contato para
+            verificar se atendemos o seu plano de saúde. Também aceitamos
+            pagamento particular.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Quanto tempo demora para ver resultados?</span>
+            <i class="fas fa-plus faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            Os primeiros resultados aparecem já nas primeiras 2-4 semanas.
+            Resultados mais significativos são vistos em 3 meses de
+            acompanhamento consistente.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+      <h2>Comece sua transformação hoje</h2>
+      <p>
+        Escolha a unidade mais próxima de você e dê o primeiro passo para
+        transformar sua alimentação.
+      </p>
+      <a
+        href="https://wa.me/5519998996659"
+        class="btn-whatsapp"
+        target="_blank"
+      >
+        <i class="fab fa-whatsapp"></i>
+        Agendar pelo WhatsApp
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">Diniz<span>Nutri</span></div>
+        <p>Transformando vidas através da nutrição desde 2014</p>
+        <div class="footer-links">
+          <a href="#inicio">Início</a>
+          <a href="#unidades">Unidades</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#areas">Áreas</a>
+          <a href="#resultados">Resultados</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Diniz Nutricionista. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
