@@ -333,11 +333,19 @@ document.querySelectorAll(".faq-question").forEach((question) => {
     });
 });
 
-// Smooth scroll for navigation links
+// Smooth scroll para navegação (CORRIGIDO para não subir ao topo)
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
+        const href = this.getAttribute("href");
+
+        // SE o link for apenas "#", previne o comportamento e NÃO faz nada
+        if (href === "#") {
+            e.preventDefault();
+            return;
+        }
+
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
+        const target = document.querySelector(href);
         if (target) {
             target.scrollIntoView({
                 behavior: "smooth",
