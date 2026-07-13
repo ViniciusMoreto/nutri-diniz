@@ -327,53 +327,6 @@ window.addEventListener("scroll", () => {
     }
 });
 
-// Testimonials Carousel
-const testimonialsTrack = document.getElementById('testimonialsTrack');
-const prevTestimonialBtn = document.getElementById('prevTestimonial');
-const nextTestimonialBtn = document.getElementById('nextTestimonial');
-const sliderDots = document.getElementById('sliderDots');
-const testimonialSlides = document.querySelectorAll('.testimonial-slide');
-let currentTestimonialIndex = 0;
-const totalTestimonials = testimonialSlides.length;
-
-// Create dots
-for (let i = 0; i < totalTestimonials; i++) {
-    const dot = document.createElement('div');
-    dot.classList.add('slider-dot');
-    if (i === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goToTestimonial(i));
-    sliderDots.appendChild(dot);
-}
-
-function updateTestimonialsCarousel() {
-    testimonialsTrack.style.transform = `translateX(-${currentTestimonialIndex * 100}%)`;
-
-    // Update dots
-    document.querySelectorAll('.slider-dot').forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentTestimonialIndex);
-    });
-}
-
-function goToTestimonial(index) {
-    currentTestimonialIndex = index;
-    updateTestimonialsCarousel();
-}
-
-prevTestimonialBtn.addEventListener('click', () => {
-    currentTestimonialIndex = (currentTestimonialIndex - 1 + totalTestimonials) % totalTestimonials;
-    updateTestimonialsCarousel();
-});
-
-nextTestimonialBtn.addEventListener('click', () => {
-    currentTestimonialIndex = (currentTestimonialIndex + 1) % totalTestimonials;
-    updateTestimonialsCarousel();
-});
-
-// Auto-advance testimonials carousel
-setInterval(() => {
-    currentTestimonialIndex = (currentTestimonialIndex + 1) % totalTestimonials;
-    updateTestimonialsCarousel();
-}, 6000);
 
 // Mobile Menu Toggle
 const mobileMenu = document.querySelector('.mobile-menu');
