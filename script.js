@@ -224,19 +224,37 @@ gsap.utils.toArray(".area-card").forEach((card, i) => {
     });
 });
 
-// Results Carousel
+// Results Carousel (Versão Responsiva e sem cortes)
 const resultsTrack = document.getElementById('resultsTrack');
 const prevBtn = document.getElementById('prevResult');
 const nextBtn = document.getElementById('nextResult');
 let currentResultIndex = 0;
 const totalResults = 8;
-const visibleResults = 3;
+
+// Função dinâmica para saber quantos cards cabem na tela
+function getVisibleResults() {
+    if (window.innerWidth <= 768) return 1;  // Celular
+    if (window.innerWidth <= 992) return 2;  // Tablet
+    return 3;                                // Desktop
+}
 
 function updateResultsCarousel() {
-    const cardWidth = resultsTrack.querySelector('.result-card').offsetWidth;
-    const gap = 30;
+    const visible = getVisibleResults();
+    const card = resultsTrack.querySelector('.result-card');
+    if (!card) return;
+
+    const gap = window.innerWidth <= 768 ? 15 : 20; // Mesmo gap do CSS
+    const cardWidth = card.offsetWidth;
+
     const offset = currentResultIndex * (cardWidth + gap);
     resultsTrack.style.transform = `translateX(-${offset}px)`;
+
+    // Feedback visual nos botões (desativa quando chega no fim)
+    prevBtn.style.opacity = currentResultIndex === 0 ? '0.5' : '1';
+    prevBtn.style.pointerEvents = currentResultIndex === 0 ? 'none' : 'auto';
+
+    nextBtn.style.opacity = currentResultIndex >= totalResults - visible ? '0.5' : '1';
+    nextBtn.style.pointerEvents = currentResultIndex >= totalResults - visible ? 'none' : 'auto';
 }
 
 prevBtn.addEventListener('click', () => {
@@ -245,18 +263,29 @@ prevBtn.addEventListener('click', () => {
 });
 
 nextBtn.addEventListener('click', () => {
-    currentResultIndex = Math.min(totalResults - visibleResults, currentResultIndex + 1);
+    const visible = getVisibleResults();
+    currentResultIndex = Math.min(totalResults - visible, currentResultIndex + 1);
+    updateResultsCarousel();
+});
+
+// Recalcula ao redimensionar a tela para evitar cards cortados ou quebrados
+window.addEventListener('resize', () => {
+    currentResultIndex = 0; // Reseta para o início com segurança
     updateResultsCarousel();
 });
 
 // Auto-advance results carousel
 setInterval(() => {
+    const visible = getVisibleResults();
     currentResultIndex++;
-    if (currentResultIndex > totalResults - visibleResults) {
+    if (currentResultIndex > totalResults - visible) {
         currentResultIndex = 0;
     }
     updateResultsCarousel();
 }, 5000);
+
+// Inicializa o carrossel corretamente ao carregar a página
+updateResultsCarousel();
 
 // Steps animation
 gsap.utils.toArray(".step").forEach((step, i) => {
