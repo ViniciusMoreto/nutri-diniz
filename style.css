@@ -1561,9 +1561,7 @@ footer {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* ========================================
-   RESPONSIVE DESIGN - MEDIA QUERIES
-   ======================================== */
+/* RESPONSIVE DESIGN - MEDIA QUERIES */
 
 /* 📱 Galaxy Fold - 320px */
 @media (max-width: 320px) {
@@ -1723,7 +1721,8 @@ footer {
   }
 
   .steps {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 30px;
   }
 
@@ -1825,6 +1824,12 @@ footer {
     padding: 22px;
   }
 
+  .steps {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
   .result-card {
     min-width: 100%;
   }
@@ -1847,6 +1852,12 @@ footer {
   .testimonial-card {
     padding: 35px 25px;
   }
+
+  .steps {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
 }
 
 /* 📱 390px */
@@ -1857,6 +1868,12 @@ footer {
 
   .hero-image img {
     height: 350px;
+  }
+
+  .steps {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
   }
 
   .about-content h2 {
@@ -1876,6 +1893,12 @@ footer {
 
   .hero-image img {
     height: 360px;
+  }
+
+  .steps {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
   }
 
   .locations-grid {
