@@ -189,25 +189,165 @@ btnShowMore.addEventListener('click', () => {
         : '<i class="fas fa-chevron-down"></i> Ver mais unidades';
 });
 
-// About section animation
-gsap.from(".about-image", {
-    scrollTrigger: {
-        trigger: ".about",
-        start: "top 70%",
-    },
-    opacity: 0,
-    x: -50,
-    duration: 1,
+// ========================================
+// ABOUT SECTION - PREMIUM HORIZONTAL TIMELINE
+// ========================================
+gsap.registerPlugin(ScrollTrigger);
+
+const aboutMM = gsap.matchMedia();
+
+// Desktop: Horizontal Scroll com Pin
+aboutMM.add("(min-width: 992px)", () => {
+    const track = document.querySelector(".about-track");
+    const items = gsap.utils.toArray(".timeline-item");
+    const dots = gsap.utils.toArray(".timeline-dot");
+    const line = document.querySelector(".timeline-line-horizontal");
+
+    if (!track) return;
+
+    // 1. Calcula a distância exata de scroll horizontal
+    const getScrollAmount = () => {
+        return -(track.scrollWidth - window.innerWidth);
+    };
+
+    // 2. Animação principal de deslocamento horizontal
+    const tween = gsap.to(track, {
+        x: getScrollAmount,
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".about",
+            start: "top top",
+            end: () => `+=${getScrollAmount() * -1}`,
+            pin: true,
+            scrub: 1.5, // Suavidade extrema
+            invalidateOnRefresh: true,
+        }
+    });
+
+    // 3. Animação da linha horizontal crescendo da esquerda para a direita
+    gsap.fromTo(line,
+        { scaleX: 0 },
+        {
+            scaleX: 1,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".about",
+                start: "top top",
+                end: () => `+=${getScrollAmount() * -1}`,
+                scrub: true,
+            }
+        }
+    );
+
+    // 4. Animação de cada item e seu respectivo dot
+    items.forEach((item, i) => {
+        // Garante visibilidade base
+        gsap.set(item, { opacity: 1 });
+        gsap.set(dots[i], { scale: 1 });
+
+        // Animação do conteúdo (fade in + slide up)
+        gsap.fromTo(item.querySelector(".timeline-content"),
+            { opacity: 0, y: 40, scale: 0.95 },
+            {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.8,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: item,
+                    containerAnimation: tween,
+                    start: "right 85%", // Começa quando o item entra pela direita
+                    end: "right 50%",
+                    scrub: true,
+                }
+            }
+        );
+
+        // Animação do "dot" estourando na tela
+        gsap.fromTo(dots[i],
+            { scale: 0 },
+            {
+                scale: 1,
+                duration: 0.5,
+                ease: "back.out(1.7)",
+                scrollTrigger: {
+                    trigger: item,
+                    containerAnimation: tween,
+                    start: "right 75%",
+                    toggleActions: "play none none reverse",
+                }
+            }
+        );
+    });
+
+    // 5. Efeito Parallax suave na imagem de fundo
+    gsap.to(".about-bg-image img", {
+        yPercent: 15,
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".about",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+        }
+    });
 });
 
-gsap.from(".about-content", {
-    scrollTrigger: {
-        trigger: ".about",
-        start: "top 70%",
-    },
-    opacity: 0,
-    x: 50,
-    duration: 1,
+// Mobile/Tablet: Timeline Vertical Elegante (sem scroll horizontal)
+aboutMM.add("(max-width: 991px)", () => {
+    const items = gsap.utils.toArray(".timeline-item");
+    const dots = gsap.utils.toArray(".timeline-dot");
+    const line = document.querySelector(".timeline-line-horizontal");
+
+    // Linha vertical crescendo
+    if (line) {
+        gsap.fromTo(line,
+            { scaleY: 0 },
+            {
+                scaleY: 1,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".about-track",
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    scrub: 1,
+                }
+            }
+        );
+    }
+
+    // Animação de cada item no mobile
+    items.forEach((item, i) => {
+        gsap.fromTo(item,
+            { opacity: 0, y: 40, x: -30 },
+            {
+                opacity: 1,
+                y: 0,
+                x: 0,
+                duration: 0.8,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse",
+                }
+            }
+        );
+
+        if (dots[i]) {
+            gsap.to(dots[i], {
+                scale: 1,
+                duration: 0.5,
+                ease: "back.out(1.7)",
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse",
+                }
+            });
+        }
+    });
 });
 
 // Areas animation
@@ -333,19 +473,11 @@ document.querySelectorAll(".faq-question").forEach((question) => {
     });
 });
 
-// Smooth scroll para navegação (CORRIGIDO para não subir ao topo)
+// Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
-        const href = this.getAttribute("href");
-
-        // SE o link for apenas "#", previne o comportamento e NÃO faz nada
-        if (href === "#") {
-            e.preventDefault();
-            return;
-        }
-
         e.preventDefault();
-        const target = document.querySelector(href);
+        const target = document.querySelector(this.getAttribute("href"));
         if (target) {
             target.scrollIntoView({
                 behavior: "smooth",

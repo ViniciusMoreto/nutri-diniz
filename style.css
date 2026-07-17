@@ -814,82 +814,279 @@ section {
 
 /* About Section */
 .about {
-  background: white;
-}
-
-.about-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.about-image {
   position: relative;
-}
-
-.about-image img {
-  width: 100%;
-  border-radius: 30px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
-}
-
-.about-badge {
-  position: absolute;
-  bottom: 30px;
-  right: -20px;
-  background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
   color: white;
-  padding: 20px 30px;
-  border-radius: 20px;
-  font-weight: 700;
-  box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
+  overflow: hidden;
 }
 
-.about-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  color: var(--black);
-  font-weight: 800;
+/* Garante altura fixa no desktop para o pin do GSAP funcionar */
+@media (min-width: 992px) {
+  .about {
+    height: 100vh;
+  }
 }
 
-.about-content .crn {
-  display: inline-block;
-  background: rgba(34, 197, 94, 0.1);
-  color: var(--dark-green);
-  padding: 8px 20px;
-  border-radius: 50px;
-  font-weight: 700;
-  margin-bottom: 25px;
-  font-size: 0.9rem;
+/* Background Image com Parallax */
+.about-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
-.about-text {
-  color: #6b7280;
-  line-height: 1.8;
-  margin-bottom: 30px;
-  font-size: 1.1rem;
+.about-bg-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
-.about-specializations {
+.about-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    10deg,
+    rgba(17, 24, 39, 0.85) 0%,
+    rgba(20, 83, 45, 0.9) 50%,
+    rgba(17, 24, 39, 0.95) 100%
+  );
+  backdrop-filter: blur(2px);
+}
+
+.about-timeline-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 30px;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.spec-tag {
-  background: white;
-  border: 2px solid var(--primary-green);
-  color: var(--dark-green);
-  padding: 8px 20px;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 0.9rem;
+.section-header.light-text h2,
+.section-header.light-text p {
+  color: white;
 }
 
+.section-header.light-text p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Track Wrapper (Janela de visualização) */
+.about-track-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 40px; /* Espaço para o header */
+}
+
+/* Track (Conteúdo que se move) */
+.about-track {
+  display: flex;
+  align-items: center;
+  height: 60vh;
+  padding-left: 15vw; /* Começa com um respiro à esquerda */
+  padding-right: 15vw; /* Termina com um respiro à direita */
+  position: relative;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Linha Horizontal Conectora */
+.timeline-line-horizontal {
+  position: absolute;
+  top: 65%; /* Alinhada com os dots */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  transform-origin: left center;
+}
+
+/* Item da Timeline */
+.timeline-item {
+  position: relative;
+  min-width: 320px;
+  max-width: 380px;
+  margin-right: 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  opacity: 0; /* Controlado pelo GSAP */
+}
+
+.timeline-item:last-child {
+  margin-right: 0;
+}
+
+/* Conteúdo (Glassmorphism sutil, sem bordas pesadas) */
+.timeline-content {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  padding: 30px 25px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 40px; /* Espaço para o dot ficar na linha */
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.timeline-content:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+}
+
+.timeline-year {
+  display: inline-block;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--primary-green);
+  line-height: 1;
+  margin-bottom: 12px;
+  text-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+}
+
+.timeline-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.timeline-text {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Dot (Ponto na linha) */
+.timeline-dot {
+  position: absolute;
+  top: 65%; /* Mesma posição da linha */
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  background: var(--primary-green);
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.6);
+  z-index: 2;
+  transform: translate(-50%, -50%) scale(0); /* Controlado pelo GSAP */
+}
+
+.timeline-spacer {
+  min-width: 8vw; /* Espaço suficiente para o último card centralizar na tela */
+  flex-shrink: 0;
+}
+
+/* ========================================
+   RESPONSIVIDADE: MOBILE VERTICAL
+   ======================================== */
+@media (max-width: 991px) {
+  .about {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .about-timeline-container {
+    height: auto;
+    padding: 100px 20px 80px;
+  }
+
+  .about-track-wrapper {
+    overflow: visible;
+    height: auto;
+    padding-top: 0;
+  }
+
+  .about-track {
+    flex-direction: column;
+    height: auto;
+    padding: 0;
+    align-items: flex-start;
+  }
+
+  .timeline-line-horizontal {
+    top: 0;
+    bottom: 0;
+    left: 28px;
+    width: 2px;
+    height: 100%;
+    transform-origin: top center;
+  }
+
+  .timeline-item {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 50px;
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 70px;
+    opacity: 1; /* Reset para o GSAP mobile cuidar disso */
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-content {
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .timeline-dot {
+    top: 10px;
+    left: 28px;
+    transform: translate(-50%, 0) scale(0);
+  }
+
+  .timeline-year {
+    font-size: 2.2rem;
+  }
+
+  .timeline-spacer {
+    display: none; /* No mobile não precisa */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-timeline-container {
+    padding: 80px 15px 60px;
+  }
+
+  .timeline-item {
+    padding-left: 50px;
+  }
+
+  .timeline-line-horizontal {
+    left: 18px;
+  }
+
+  .timeline-dot {
+    left: 18px;
+  }
+
+  .timeline-content {
+    padding: 20px;
+  }
+
+  .timeline-year {
+    font-size: 1.8rem;
+  }
+
+  .timeline-title {
+    font-size: 1.2rem;
+  }
+}
 /* Areas Section */
 .areas {
   background: linear-gradient(135deg, var(--dark-green) 0%, #166534 100%);
