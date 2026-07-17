@@ -1142,6 +1142,7 @@ section {
 /* Results Section */
 .results {
   background: var(--light-gray);
+  overflow: hidden;
 }
 
 .results-carousel {
@@ -1153,8 +1154,10 @@ section {
 
 .results-track {
   display: flex;
+  flex-wrap: nowrap;
   gap: 20px; /* Gap fixo para facilitar o cálculo exato */
-  transition: transform 0.5s ease;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
 }
 
 .result-card {
@@ -1230,6 +1233,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
 }
 
 .carousel-btn:hover {
@@ -2065,6 +2069,40 @@ footer {
 
   .result-card {
     min-width: calc(50% - 15px);
+  }
+
+  results {
+    padding: 60px 0; /* Ajuste de espaçamento vertical */
+  }
+
+  .results-carousel {
+    padding: 0;
+    overflow: hidden; /* Esconde os cards que estão fora da tela */
+  }
+
+  .results-track {
+    gap: 15px;
+    padding: 0 5%; /* Dá um respiro nas laterais para mostrar que há mais conteúdo */
+  }
+
+  .result-card {
+    /* Ocupa 85% da tela: mostra 1 card completo + um pedaço do próximo para indicar scroll */
+    flex: 0 0 85%;
+    margin: 0;
+  }
+
+  .result-images {
+    height: 220px; /* Levemente menor no mobile para equilibrar */
+  }
+
+  .carousel-controls {
+    margin-top: 25px;
+  }
+
+  .carousel-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
   }
 
   .steps {
