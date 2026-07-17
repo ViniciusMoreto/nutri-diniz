@@ -368,7 +368,6 @@ gsap.utils.toArray(".area-card").forEach((card, i) => {
 const resultsTrack = document.getElementById('resultsTrack');
 const prevBtn = document.getElementById('prevResult');
 const nextBtn = document.getElementById('nextResult');
-let currentResultIndex = 0;
 const totalResults = 8;
 
 // Função dinâmica para saber quantos cards cabem na tela
@@ -408,19 +407,11 @@ nextBtn.addEventListener('click', () => {
     updateResultsCarousel();
 });
 
-// Recalcula ao redimensionar a tela para evitar cards cortados ou quebrados
-window.addEventListener('resize', () => {
-    currentResultIndex = 0; // Reseta para o início com segurança
-    updateResultsCarousel();
-});
 
 // Auto-advance results carousel
 setInterval(() => {
     const visible = getVisibleResults();
     currentResultIndex++;
-    if (currentResultIndex > totalResults - visible) {
-        currentResultIndex = 0;
-    }
     updateResultsCarousel();
 }, 5000);
 
