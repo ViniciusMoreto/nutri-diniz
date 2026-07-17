@@ -1,6 +1,8 @@
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
+ScrollTrigger.config({ ignoreMobileResize: true });
+
 // Loading Animation
 const loader = document.getElementById('loader');
 const loaderD = document.querySelector('.loader-d');
@@ -368,6 +370,7 @@ gsap.utils.toArray(".area-card").forEach((card, i) => {
 const resultsTrack = document.getElementById('resultsTrack');
 const prevBtn = document.getElementById('prevResult');
 const nextBtn = document.getElementById('nextResult');
+let currentResultIndex = 0;
 const totalResults = 8;
 
 // Função dinâmica para saber quantos cards cabem na tela
@@ -407,11 +410,23 @@ nextBtn.addEventListener('click', () => {
     updateResultsCarousel();
 });
 
+// Recalcula ao redimensionar a tela SEM zerar a posição do usuário
+window.addEventListener('resize', () => {
+    // Apenas garante que o índice não ultrapasse o novo limite de cards visíveis
+    const visible = getVisibleResults();
+    if (currentResultIndex > totalResults - visible) {
+        currentResultIndex = Math.max(0, totalResults - visible);
+    }
+    updateResultsCarousel();
+});
 
 // Auto-advance results carousel
 setInterval(() => {
     const visible = getVisibleResults();
     currentResultIndex++;
+    if (currentResultIndex > totalResults - visible) {
+        currentResultIndex = 0;
+    }
     updateResultsCarousel();
 }, 5000);
 
@@ -478,14 +493,21 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     });
 });
 
-// Parallax effect for hero
+// Parallax effect for hero (com passive: true para performance mobile)
+let ticking = false;
 window.addEventListener("scroll", () => {
-    const scrolled = window.pageYOffset;
-    const heroImage = document.querySelector(".hero-image");
-    if (heroImage) {
-        heroImage.style.transform = `translateY(${scrolled * 0.2}px)`;
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            const scrolled = window.pageYOffset;
+            const heroImage = document.querySelector(".hero-image");
+            if (heroImage) {
+                heroImage.style.transform = `translateY(${scrolled * 0.2}px)`;
+            }
+            ticking = false;
+        });
+        ticking = true;
     }
-});
+}, { passive: true });
 
 
 // Mobile Menu Toggle
