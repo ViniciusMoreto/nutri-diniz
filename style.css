@@ -1928,8 +1928,9 @@ footer {
   }
 
   .steps {
-    flex-direction: column;
-    gap: 25px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
   }
 
   .diff-grid {
