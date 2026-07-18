@@ -2087,35 +2087,30 @@ footer {
     gap: 25px;
   }
 
-  .results-carousel {
-    max-width: 100%;
-  }
-
-  .result-card {
-    min-width: calc(50% - 15px);
-  }
-
   .results {
-    padding: 60px 0; /* Ajuste de espaçamento vertical */
+    padding: 60px 0;
   }
 
   .results-carousel {
-    padding: 0;
-    overflow: hidden; /* Esconde os cards que estão fora da tela */
+    padding: 20px 0;
+    overflow: hidden; /* Esconde completamente os cards laterais */
   }
 
   .results-track {
-    gap: 15px;
+    display: flex;
+    gap: 0; /* Sem gap para não criar espaço extra */
+    padding: 0;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .result-card {
-    /* Ocupa 85% da tela: mostra 1 card completo + um pedaço do próximo para indicar scroll */
-    flex: 0 0 85%;
-    margin: 0;
+    flex: 0 0 90%; /* Cada card ocupa 90% da largura da tela */
+    max-width: 90%;
+    margin: 0 auto; /* Centraliza o card */
   }
 
   .result-images {
-    height: 220px; /* Levemente menor no mobile para equilibrar */
+    height: 220px;
   }
 
   .carousel-controls {
