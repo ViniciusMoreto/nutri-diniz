@@ -986,9 +986,8 @@ section {
   flex-shrink: 0;
 }
 
-/* ========================================
-   RESPONSIVIDADE: MOBILE VERTICAL
-   ======================================== */
+/* RESPONSIVIDADE: MOBILE VERTICAL */
+
 @media (max-width: 991px) {
   .about {
     height: auto;
@@ -1240,27 +1239,6 @@ section {
   background: var(--primary-green);
   color: white;
   transform: scale(1.1);
-}
-
-@media (max-width: 992px) {
-  .result-card {
-    flex: 0 0 calc((100% - 20px) / 2);
-  }
-}
-
-@media (max-width: 768px) {
-  .results-carousel {
-    padding: 20px 5%;
-  }
-
-  .result-card {
-    flex: 0 0 80%;
-    margin: 0 auto;
-  }
-
-  .results-track {
-    gap: 15px;
-  }
 }
 
 /* How it Works */
@@ -1824,7 +1802,7 @@ footer {
   .results-track {
     display: flex;
     gap: 20px; /* Sem gap para não criar espaço extra */
-    padding: 0;
+    padding: 0 5%;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
@@ -1889,7 +1867,7 @@ footer {
   .results-track {
     display: flex;
     gap: 20px; /* Sem gap para não criar espaço extra */
-    padding: 0;
+    padding: 0 5%;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
@@ -1946,7 +1924,7 @@ footer {
   .results-track {
     display: flex;
     gap: 20px; /* Sem gap para não criar espaço extra */
-    padding: 0;
+    padding: 0 5%;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
@@ -2011,7 +1989,7 @@ footer {
   .results-track {
     display: flex;
     gap: 20px; /* Sem gap para não criar espaço extra */
-    padding: 0;
+    padding: 0 5%;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
@@ -2102,7 +2080,7 @@ footer {
   .results-track {
     display: flex;
     gap: 20px; /* Sem gap para não criar espaço extra */
-    padding: 0;
+    padding: 0 5%;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
@@ -2186,7 +2164,7 @@ footer {
   .results-track {
     display: flex;
     gap: 20px; /* Sem gap para não criar espaço extra */
-    padding: 0;
+    padding: 0 5%;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
@@ -2218,7 +2196,7 @@ footer {
   .results-track {
     display: flex;
     gap: 20px; /* Sem gap para não criar espaço extra */
-    padding: 0;
+    padding: 0 5%;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
@@ -2339,7 +2317,7 @@ footer {
   .results-track {
     display: flex;
     gap: 20px; /* Sem gap para não criar espaço extra */
-    padding: 0;
+    padding: 0 5%;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
