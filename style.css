@@ -2100,21 +2100,18 @@ footer {
   }
 
   .results-carousel {
-    padding: 20px 0;
+    padding: 0;
     overflow: hidden; /* Esconde os cards que estão fora da tela */
   }
 
   .results-track {
-    display: flex;
-    gap: 20px;
+    gap: 15px;
     padding: 0 5%; /* Dá um respiro nas laterais para mostrar que há mais conteúdo */
-    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .result-card {
-    /* Garante que o card ocupe exatamente a largura disponível (100% do track menos o gap) */
-    flex: 0 0 calc(100% - 20px);
-    max-width: calc(100% - 20px);
+    /* Ocupa 85% da tela: mostra 1 card completo + um pedaço do próximo para indicar scroll */
+    flex: 0 0 100%;
     margin: 0;
   }
 
