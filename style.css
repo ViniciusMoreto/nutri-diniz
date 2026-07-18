@@ -2095,7 +2095,7 @@ footer {
     min-width: calc(50% - 15px);
   }
 
-  results {
+  .results {
     padding: 60px 0; /* Ajuste de espaçamento vertical */
   }
 
