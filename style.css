@@ -1823,7 +1823,7 @@ footer {
 
   .results-track {
     display: flex;
-    gap: 0; /* Sem gap para não criar espaço extra */
+    gap: 20px; /* Sem gap para não criar espaço extra */
     padding: 0;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
@@ -1888,7 +1888,7 @@ footer {
 
   .results-track {
     display: flex;
-    gap: 0; /* Sem gap para não criar espaço extra */
+    gap: 20px; /* Sem gap para não criar espaço extra */
     padding: 0;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
@@ -1945,7 +1945,7 @@ footer {
 
   .results-track {
     display: flex;
-    gap: 0; /* Sem gap para não criar espaço extra */
+    gap: 20px; /* Sem gap para não criar espaço extra */
     padding: 0;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
@@ -2010,7 +2010,7 @@ footer {
 
   .results-track {
     display: flex;
-    gap: 0; /* Sem gap para não criar espaço extra */
+    gap: 20px; /* Sem gap para não criar espaço extra */
     padding: 0;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
@@ -2101,7 +2101,7 @@ footer {
 
   .results-track {
     display: flex;
-    gap: 0; /* Sem gap para não criar espaço extra */
+    gap: 20px; /* Sem gap para não criar espaço extra */
     padding: 0;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
@@ -2185,7 +2185,7 @@ footer {
 
   .results-track {
     display: flex;
-    gap: 0; /* Sem gap para não criar espaço extra */
+    gap: 20px; /* Sem gap para não criar espaço extra */
     padding: 0;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
@@ -2217,7 +2217,7 @@ footer {
 
   .results-track {
     display: flex;
-    gap: 0; /* Sem gap para não criar espaço extra */
+    gap: 20px; /* Sem gap para não criar espaço extra */
     padding: 0;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
@@ -2338,7 +2338,7 @@ footer {
 
   .results-track {
     display: flex;
-    gap: 0; /* Sem gap para não criar espaço extra */
+    gap: 20px; /* Sem gap para não criar espaço extra */
     padding: 0;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
