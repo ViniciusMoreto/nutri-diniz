@@ -1708,18 +1708,6 @@ footer {
     font-size: 2.5rem;
   }
 
-  .results-carousel {
-    padding: 0 10px;
-  }
-
-  .result-card {
-    min-width: 100%;
-  }
-
-  .result-images {
-    height: 200px;
-  }
-
   .steps {
     flex-direction: row;
     flex-wrap: wrap;
@@ -1946,10 +1934,6 @@ footer {
     gap: 20px;
   }
 
-  .result-card {
-    min-width: 100%;
-  }
-
   .steps {
     flex-direction: row;
     flex-wrap: wrap;
@@ -1992,14 +1976,6 @@ footer {
   .areas-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
-  }
-
-  .results-carousel {
-    max-width: 100%;
-  }
-
-  .result-card {
-    min-width: 100%;
   }
 
   .steps {
