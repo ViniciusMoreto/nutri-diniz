@@ -428,7 +428,7 @@ setInterval(() => {
         currentResultIndex = 0;
     }
     updateResultsCarousel();
-}, 5000);
+}, 10000);
 
 // Inicializa o carrossel corretamente ao carregar a página
 updateResultsCarousel();

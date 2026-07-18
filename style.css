@@ -1812,14 +1812,50 @@ footer {
     padding: 22px;
   }
 
+  .results {
+    padding: 60px 0;
+  }
+
+  .results-carousel {
+    padding: 20px 0;
+    overflow: hidden; /* Esconde completamente os cards laterais */
+  }
+
+  .results-track {
+    display: flex;
+    gap: 0; /* Sem gap para não criar espaço extra */
+    padding: 0;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .result-card {
+    flex: 0 0 90%; /* Cada card ocupa 90% da largura da tela */
+    max-width: 90%;
+    margin: 0 auto; /* Centraliza o card */
+  }
+
+  .result-images {
+    height: 220px;
+  }
+
+  .carousel-controls {
+    margin-top: 25px;
+  }
+
+  .carousel-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+
   .steps {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 30px;
   }
 
-  .result-card {
-    min-width: 100%;
+  .steps::before {
+    display: none;
   }
 }
 
@@ -1841,10 +1877,50 @@ footer {
     padding: 35px 25px;
   }
 
+  .results {
+    padding: 60px 0;
+  }
+
+  .results-carousel {
+    padding: 20px 0;
+    overflow: hidden; /* Esconde completamente os cards laterais */
+  }
+
+  .results-track {
+    display: flex;
+    gap: 0; /* Sem gap para não criar espaço extra */
+    padding: 0;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .result-card {
+    flex: 0 0 90%; /* Cada card ocupa 90% da largura da tela */
+    max-width: 90%;
+    margin: 0 auto; /* Centraliza o card */
+  }
+
+  .result-images {
+    height: 220px;
+  }
+
+  .carousel-controls {
+    margin-top: 25px;
+  }
+
+  .carousel-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+
   .steps {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 30px;
+  }
+
+  .steps::before {
+    display: none;
   }
 }
 
@@ -1858,10 +1934,50 @@ footer {
     height: 350px;
   }
 
+  .results {
+    padding: 60px 0;
+  }
+
+  .results-carousel {
+    padding: 20px 0;
+    overflow: hidden; /* Esconde completamente os cards laterais */
+  }
+
+  .results-track {
+    display: flex;
+    gap: 0; /* Sem gap para não criar espaço extra */
+    padding: 0;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .result-card {
+    flex: 0 0 90%; /* Cada card ocupa 90% da largura da tela */
+    max-width: 90%;
+    margin: 0 auto; /* Centraliza o card */
+  }
+
+  .result-images {
+    height: 220px;
+  }
+
+  .carousel-controls {
+    margin-top: 25px;
+  }
+
+  .carousel-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+
   .steps {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 30px;
+  }
+
+  .steps::before {
+    display: none;
   }
 
   .about-content h2 {
@@ -1883,10 +1999,50 @@ footer {
     height: 360px;
   }
 
+  .results {
+    padding: 60px 0;
+  }
+
+  .results-carousel {
+    padding: 20px 0;
+    overflow: hidden; /* Esconde completamente os cards laterais */
+  }
+
+  .results-track {
+    display: flex;
+    gap: 0; /* Sem gap para não criar espaço extra */
+    padding: 0;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .result-card {
+    flex: 0 0 90%; /* Cada card ocupa 90% da largura da tela */
+    max-width: 90%;
+    margin: 0 auto; /* Centraliza o card */
+  }
+
+  .result-images {
+    height: 220px;
+  }
+
+  .carousel-controls {
+    margin-top: 25px;
+  }
+
+  .carousel-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+
   .steps {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 30px;
+  }
+
+  .steps::before {
+    display: none;
   }
 
   .locations-grid {
@@ -1934,10 +2090,50 @@ footer {
     gap: 20px;
   }
 
+  .results {
+    padding: 60px 0;
+  }
+
+  .results-carousel {
+    padding: 20px 0;
+    overflow: hidden; /* Esconde completamente os cards laterais */
+  }
+
+  .results-track {
+    display: flex;
+    gap: 0; /* Sem gap para não criar espaço extra */
+    padding: 0;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .result-card {
+    flex: 0 0 90%; /* Cada card ocupa 90% da largura da tela */
+    max-width: 90%;
+    margin: 0 auto; /* Centraliza o card */
+  }
+
+  .result-images {
+    height: 220px;
+  }
+
+  .carousel-controls {
+    margin-top: 25px;
+  }
+
+  .carousel-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+
   .steps {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 30px;
+  }
+
+  .steps::before {
+    display: none;
   }
 
   .diff-grid {
@@ -1976,6 +2172,74 @@ footer {
   .areas-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
+  }
+
+  .results {
+    padding: 60px 0;
+  }
+
+  .results-carousel {
+    padding: 20px 0;
+    overflow: hidden; /* Esconde completamente os cards laterais */
+  }
+
+  .results-track {
+    display: flex;
+    gap: 0; /* Sem gap para não criar espaço extra */
+    padding: 0;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .result-card {
+    flex: 0 0 90%; /* Cada card ocupa 90% da largura da tela */
+    max-width: 90%;
+    margin: 0 auto; /* Centraliza o card */
+  }
+
+  .result-images {
+    height: 220px;
+  }
+
+  .carousel-controls {
+    margin-top: 25px;
+  }
+
+  .carousel-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+
+  .results-carousel {
+    padding: 20px 0;
+    overflow: hidden; /* Esconde completamente os cards laterais */
+  }
+
+  .results-track {
+    display: flex;
+    gap: 0; /* Sem gap para não criar espaço extra */
+    padding: 0;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .result-card {
+    flex: 0 0 90%; /* Cada card ocupa 90% da largura da tela */
+    max-width: 90%;
+    margin: 0 auto; /* Centraliza o card */
+  }
+
+  .result-images {
+    height: 220px;
+  }
+
+  .carousel-controls {
+    margin-top: 25px;
+  }
+
+  .carousel-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
   }
 
   .steps {
