@@ -2111,7 +2111,7 @@ footer {
 
   .result-card {
     /* Ocupa 85% da tela: mostra 1 card completo + um pedaço do próximo para indicar scroll */
-    flex: 0 0 100%;
+    flex: 0 0 90%;
     margin: 0;
   }
 
