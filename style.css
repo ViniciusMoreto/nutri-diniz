@@ -2095,10 +2095,6 @@ footer {
     min-width: calc(50% - 15px);
   }
 
-  .results {
-    padding: 60px 0; /* Ajuste de espaçamento vertical */
-  }
-
   .results-carousel {
     padding: 0;
     overflow: hidden; /* Esconde os cards que estão fora da tela */
